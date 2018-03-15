@@ -44,7 +44,7 @@ while True:
 			GPIO.output(RELAY7,0)
 			GPIO.output(RELAY8,0)
 			time.sleep(10)
-			print "Checking " + time.strftime(%a, %d %b %Y %H:%M:%S", time.localtime())
+			print "Checking " + time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime())
 		else:
 			if (tom != None):
 				print "Tom's here :)"
@@ -57,7 +57,7 @@ while True:
 				GPIO.output(RELAY7,0)
 				GPIO.output(RELAY8,0)
 				time.sleep(10)
-				print "Checking " + time.strftime(%a, %d %b %Y %H:%M:%S", time.localtime())
+				print "Checking " + time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime())
 
 	else:
 		print "Tom's gone :("
@@ -70,4 +70,4 @@ while True:
 		GPIO.output(RELAY7,1)
 		GPIO.output(RELAY8,1)
 		time.sleep(10)
-		print "Checking " + time.strftime(%a, %d %b %Y %H:%M:%S", time.localtime())
+		print "Checking " + time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime())
