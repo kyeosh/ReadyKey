@@ -3,7 +3,8 @@ import time
 import RPi.GPIO as GPIO
 
 #this command sets relay number to correspond with "physical" numbers in the $gpio readall table
-#added key and configure pin # 38 to loook for a 5v signal, i am taking the signal from pin 2 and i plan to use a key switch to open or close the connection
+#added key and configure pin # 38 to loook for a 5v signal, i am taking the signal from pin 2 and 
+#I plan to use a key switch to open or close the connection
 
 GPIO.setmode(GPIO.BOARD)
 RELAY1 = 7
@@ -26,7 +27,8 @@ GPIO.setup(RELAY8, GPIO.OUT)
 GPIO.setup(KEY, GPIO.IN, GPIO.PUD_DOWN)
 
 
-#added key detection and restructured the mainloop, moved the checking statement to the after the wait, so when it prints checking it will immediately loop back to the check. 
+#added key detection and restructured the mainloop, moved the checking statement to the after the wait,
+#so when it prints checking it will immediately loop back to the check. 
 
 while True:
 	tom = bluetooth.lookup_name('94:65:2d:82:53:61', timeout=100)
