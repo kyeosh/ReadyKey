@@ -32,7 +32,7 @@ GPIO.setup(KEY, GPIO.IN, GPIO.PUD_DOWN)
 
 while True:
 	tom = bluetooth.lookup_name('94:65:2d:82:53:61', timeout=100)
-	if ((tom != None) or (GPIO.input(38)):
+	if ((tom != None) or (GPIO.input(38))):
 		While (GPIO.input(38)):
 			print "Key bypass engaged "
 			GPIO.output(RELAY1,0)
