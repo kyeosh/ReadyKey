@@ -6,7 +6,6 @@ import logging
 import time
 import threading
 import bluetooth
-import time
 import RPi.GPIO as GPIO
 
 logging.basicConfig(filename='/home/pi/kyeocycle/log/live.log', level=logging.INFO)
