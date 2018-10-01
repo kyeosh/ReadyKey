@@ -8,7 +8,7 @@ import threading
 import bluetooth
 import RPi.GPIO as GPIO
 
-logging.basicConfig(filename='/home/pi/kyeocycle/log/live.log', level=logging.INFO)
+logging.basicConfig(filename='/home/pi/kyeocycle/log/'+(time.strftime("%d%b%Y", time.localtime()))+'.log', level=logging.INFO)
 
 GPIO.setmode(GPIO.BOARD)
 RELAY1 = 7
