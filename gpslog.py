@@ -9,7 +9,7 @@ import bluetooth
 import time
 import RPi.GPIO as GPIO
 
-logging.basicConfig(filename='/home/pi/kyeocycle/log/live.log', level=logging.INFO)
+logging.basicConfig(filename='/home/pi/kyeocycle/log/'+(time.strftime("%d%b%Y", time.localtime()))+'.log', level=logging.INFO)
 
 GPIO.setmode(GPIO.BOARD)
 RELAY1 = 7
@@ -57,7 +57,7 @@ if __name__ == '__main__':
 		if ((tom != None) or (GPIO.input(38))):
 			while (GPIO.input(38)):
 				state="Key bypass engaged "
-				print(state)
+				print(state)			
 				logging.info(state)
 				GPIO.output(RELAY1,0)
 				GPIO.output(RELAY2,0)
