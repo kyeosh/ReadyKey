@@ -9,7 +9,8 @@ import bluetooth
 import  rpi_backlight as bl
 import RPi.GPIO as GPIO
 
-logging.basicConfig(filename='/home/pi/kyeocycle/log/'+(time.strftime("%d%b%Y", time.localtime()))+'.log', level=logging.INFO)
+logging.basicConfig(filename='/home/pi/Kyeocycle/log/'+(time.strftime("%d%b%Y", time.localtime()))+'.csv', level=logging.INFO)
+logging.info(", Time, Latitude, Longitude")
 
 GPIO.setmode(GPIO.BOARD)
 RELAY1 = 7
@@ -58,7 +59,6 @@ if __name__ == '__main__':
 			while (GPIO.input(38)):
 				state="Key bypass engaged "
 				print(state)			
-				logging.info(state)
 				GPIO.output(RELAY1,0)
 				GPIO.output(RELAY2,0)
 				GPIO.output(RELAY3,0)
@@ -76,7 +76,6 @@ if __name__ == '__main__':
 				if (tom != None):
 					state="Tom's here :)"
 					print(state)
-					logging.info(state)
 					GPIO.output(RELAY1,0)
 					GPIO.output(RELAY2,0)
 					GPIO.output(RELAY3,0)
@@ -88,12 +87,11 @@ if __name__ == '__main__':
 					bl.set_power(True)
 					time.sleep(10)
 					check="Checking " + time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime()) + ",  " + str(gpsd.fix.latitude) + ",  " + str(gpsd.fix.longitude)
-                                        print(check)
-                                        logging.info(check)
+					print(check)
+					logging.info(check)
 		else:
 			state="Tom's gone :("
 			print(state)
-			logging.info(state)
 			GPIO.output(RELAY1,1)
 			GPIO.output(RELAY2,1)
 			GPIO.output(RELAY3,1)
