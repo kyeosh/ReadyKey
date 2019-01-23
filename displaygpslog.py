@@ -9,7 +9,7 @@ import bluetooth
 import  rpi_backlight as bl
 import RPi.GPIO as GPIO
 
-logging.basicConfig(filename='/home/pi/Kyeocycle/log/'+(time.strftime("%d%b%Y", time.localtime()))+'.csv', level=logging.INFO)
+logging.basicConfig(filename='/home/pi/kyeocycle/log/'+(time.strftime("%d%b%Y", time.localtime()))+'.csv', level=logging.INFO)
 logging.info(", Time, Latitude, Longitude")
 
 GPIO.setmode(GPIO.BOARD)
