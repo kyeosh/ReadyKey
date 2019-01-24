@@ -3,22 +3,22 @@ This repository contains a set of programs designed to run on a Raspberry Pi. Th
 
 The "tmu.sh" is intended to be started at boot by adding:
 
-  [sudo /home/pi/kyeocycle/tmu.sh &]
+  "sudo /home/pi/kyeocycle/tmu.sh &"
 
 to the rc.local file. 
 
 The gpsd code is sometimes finnicky so it useful to add:
 
-  [sudo service gpsd stop
-  sudo gpsd -N -D3 -F /var/run/gpsd.sock /dev/ttyUSB0 &]
+  "sudo service gpsd stop
+  sudo gpsd -N -D3 -F /var/run/gpsd.sock /dev/ttyUSB0 &"
  
  to rc.local as well.
  
 Logging to a cloud folder can be set up by adding:
  
-  [0,15,30,45 * * * * /home/pi/kyeocycle/logsync.sh
+  "0,15,30,45 * * * * /home/pi/kyeocycle/logsync.sh
   0 1 * * * sudo find /home/pi/kyeocycle/log/ -mtime +7 -type f -delete
-  0 3 * * * sudo reboot]
+  0 3 * * * sudo reboot"
   
  to crontab. The reboot is necessary to set a new log name everyday. Otherwise the syncing process would take more data each time. this way it seems to use the same amount everyday.
 
