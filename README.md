@@ -23,7 +23,7 @@ Logging to a cloud folder can be set up by adding:
   
      0 3 * * * sudo reboot
   
- to crontab. The reboot is necessary to set a new log name everyday. Otherwise the syncing process would take more data each time. this way it seems to use the same amount everyday.
+ to crontab. The reboot is necessary to set a new log name everyday. Otherwise the syncing process would take more data each time. this way it seems to use the same amount everyday. The version of rclone hosted in the apt repository does not include the "--ignore-checksum" option so I installed 1.43 manually.
 
 
 The "simpler" folder is older versions of the core python script, without some features included in the final version.
