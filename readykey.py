@@ -32,7 +32,7 @@ GPIO.setup(RELAY7, GPIO.OUT)
 GPIO.setup(RELAY8, GPIO.OUT)
 GPIO.setup(KEY, GPIO.IN, GPIO.PUD_DOWN)
 
-with open('KeyID','r') as myfile:
+with open('/home/pi/kyeocycle/KeyID','r') as myfile:
   BEACON = myfile.read()
  
 gpsd = None #seting the global variable
