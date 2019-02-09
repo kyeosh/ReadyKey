@@ -17,7 +17,7 @@ read -p "Please enter the MAC address of the bluetooth beacon:" input
 echo $input>/home/pi/kyeocycle/KeyID
 
 #step 4: run the rclone configuration script
-rclone config create
+rclone config create cloud drive
 
 #step 5: configure crontab to run rclone every 15 mins. check the second answer
 #  https://stackoverflow.com/questions/8579330/appending-to-crontab-with-a-shell-script-on-ubuntu  
