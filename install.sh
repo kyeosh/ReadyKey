@@ -17,6 +17,8 @@ read -p "Please enter the MAC address of the bluetooth beacon:" input
 echo $input>/home/pi/kyeocycle/KeyID
 
 #step 4: run the rclone configuration script
+#currently must run be configured over vnc or with a display to log in to google drive via a browser
+# install raspberrypi-ui-mods and chromium-browser to raspian lite before running this script
 rclone config create cloud drive
 
 #step 5: configure crontab to run rclone every 15 mins. check the second answer
