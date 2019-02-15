@@ -23,6 +23,7 @@ rclone config create cloud drive
 
 #step 5: configure crontab to run rclone every 15 mins. check the second answer
 #  https://stackoverflow.com/questions/8579330/appending-to-crontab-with-a-shell-script-on-ubuntu  
+crontab -r
 (crontab -l ; echo "0,15,30,45 * * * * /home/pi/kyeocycle/logsync.sh")| crontab -
 (crontab -l ; echo "0 1 * * * sudo find /home/pi/kyeocycle/log/ -mtime +7 -type f -delete")| crontab -
 (crontab -l ; echo "0 3 * * * sudo reboot")| crontab -
