@@ -57,7 +57,7 @@ if __name__ == '__main__':
   try:
     gpsp.start() # start it up
     while True:
-		tom =  bluetooth.lookup_name(BEACON, timeout=110)
+		tom =  bluetooth.lookup_name(BEACON.rstrip(), timeout=110)
 		if ((tom != None) or (GPIO.input(38))):
 			while (GPIO.input(38)):	
 				GPIO.output(RELAY1,0)
