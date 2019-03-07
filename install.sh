@@ -19,11 +19,9 @@ echo $input>/home/pi/readykey/KeyID
 #step 4: run the rclone configuration script
 #currently must run be configured over vnc or with a display to log in to google drive via a browser
 # install raspberrypi-ui-mods and chromium-browser to raspian lite before running this script
-read -r -p "Do you want to configure rclone to sync location logs to Google Drive? [y/N] "
-if [[  "$answer" =~ ^([nN][oO][nN])+$ ]]
+read -r -p "Do you want to configure rclone to sync location logs to Google Drive? [y/N] " response
+if [[  "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
 then 
-	exit
-else
 	read -r -p "Do you have a desktop environment and browser running on this device? [y/N] " response
 	if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
 	then
@@ -37,4 +35,7 @@ else
 		read -r -p "Please install a desktop and browser, or configure rclone manaully."
 		exit
 	fi
+else
+	read -r -p "All other cloud storage providers must be configured manually. "
+	exit
 fi
