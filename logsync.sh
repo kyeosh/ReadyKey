@@ -1,1 +1,1 @@
-rclone sync /home/pi/kyeocycle/log/ cloud:/Programming/RaspberryPi/Kyeocycle/LiveLog/ --ignore-checksum
+rclone sync /home/pi/readykey/log/ cloud:/ReadyKey/LiveLog/ --ignore-checksum

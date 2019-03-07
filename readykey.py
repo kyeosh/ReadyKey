@@ -9,7 +9,7 @@ import bluetooth
 import  rpi_backlight as bl
 import RPi.GPIO as GPIO
 
-logging.basicConfig(filename='/home/pi/kyeocycle/log/'+(time.strftime("%d%b%Y", time.localtime()))+'.csv', level=logging.INFO, format='%(message)s')
+logging.basicConfig(filename='/home/pi/readykey/log/'+(time.strftime("%d%b%Y", time.localtime()))+'.csv', level=logging.INFO, format='%(message)s')
 logging.info("Status, Time, Latitude, Longitude")
 
 GPIO.setmode(GPIO.BOARD)
@@ -32,7 +32,7 @@ GPIO.setup(RELAY7, GPIO.OUT)
 GPIO.setup(RELAY8, GPIO.OUT)
 GPIO.setup(KEY, GPIO.IN, GPIO.PUD_DOWN)
 
-with open('/home/pi/kyeocycle/KeyID','r') as myfile:
+with open('/home/pi/readykey/KeyID','r') as myfile:
   BEACON = myfile.read()
  
 gpsd = None #seting the global variable

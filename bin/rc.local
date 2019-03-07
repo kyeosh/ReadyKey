@@ -21,6 +21,6 @@ sudo service gpsd stop
 
 sudo gpsd -N -D3 -F /var/run/gpsd.sock /dev/ttyUSB0 &
 
-sudo /home/pi/kyeocycle/tmu.sh &
+sudo /home/pi/readykey/tmu.sh &
 
 exit 0
