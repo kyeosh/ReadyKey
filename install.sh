@@ -14,24 +14,24 @@ curl https://rclone.org/install.sh | sudo bash
 
 #this line is not ideal because it will overwrite any existing rc.local config
 
-# sudo cp  /home/pi/readykey/bin/rc.local /etc/rc.local
+sudo cp  /home/pi/readykey/bin/rc.local /etc/rc.local
 
 
 # this has not been tested but may append the right lines without ovewriting the config
 # could possibly break the gps becasue it does not necessarily take the tttyUSB0 address
 
-cd /etc/
-RC=rc.local
+#cd /etc/
+#RC=rc.local
 
-if grep -q "sudo /home/pi/readykey/tmu.sh &" "$RC";
-	then
-		echo "File /etc/rc.local already configured. Doing nothing."
-	else
-		sed -i -e "s/^exit 0sudo service gpsd stop & \&\n&/g" "$RC"
-		sed -i -e "s/^exit 0sudo gpsd -N -D3 -F /var/run/gpsd.sock /dev/ttyUSB0 & \&\n&/g" "$RC"
-		sed -i -e "s/^exit 0sudo /home/pi/readykey/tmu.sh & \&\n&/g" "$RC"
-		echo "File /etc/rc.local configured."
-fi
+#if grep -q "sudo /home/pi/readykey/tmu.sh &" "$RC";
+#	then
+#		echo "File /etc/rc.local already configured. Doing nothing."
+#	else
+#		sed -i -e "s/^exit 0sudo service gpsd stop & \&\n&/g" "$RC"
+#		sed -i -e "s/^exit 0sudo gpsd -N -D3 -F /var/run/gpsd.sock /dev/ttyUSB0 & \&\n&/g" "$RC"
+#		sed -i -e "s/^exit 0sudo /home/pi/readykey/tmu.sh & \&\n&/g" "$RC"
+#		echo "File /etc/rc.local configured."
+#fi
 
 #step 3: request a Bluetooth mac address from the user and save it as KeyID file
 
