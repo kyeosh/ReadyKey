@@ -21,6 +21,7 @@ sudo service gpsd stop
 
 sudo gpsd -N -D3 -F /var/run/gpsd.sock /dev/ttyUSB0 &
 
+sleep 2    #this waiting peroid is necessary for the bluetooth to work, for some reason it is not necessary on raspbain lite
 sudo /home/pi/readykey/tmu.sh &
 
 exit 0
